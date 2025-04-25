@@ -6,58 +6,72 @@
     <title>Leadership Cloudcroft</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <style>
         body {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             height: 100vh;
-            margin:  0;
-            padding: 15vh auto 0 auto;
-            background-color:#184438;
+            margin: 0;
+            background-color: #184438;
             font-family: 'Libre Baskerville', serif;
             text-align: center;
-        color:#373737
+            color: #373737;
+        }
+
+        .logo {
+            padding: 1vh;
         }
 
         h1 {
             font-size: 3em;
             margin: 0;
         }
+
         h2 {
             font-size: 1.5em;
             margin: 0.5em 0;
         }
-        .mission p {
+
+        .mission {
             font-family: 'Libre Baskerville', serif;
-            font-size: 1em;
-            line-height:1.4rem;
+            font-size: 1.2em;
+            line-height: 2rem;
             margin: 5vh 0 0.5em 0;
+            color:white;
+            width:54ch;
         }
 
-
-@media only screen and (max-width: 768px) {
-        p class="mission" {
-            width: 90vw !important;
+        .reader-embed {
+            background-color: rgb(245, 245, 245);
+            width: 100vw !important;
         }
-    }
+
+        @media only screen and (max-width: 768px) {
+            .mission {
+                width: 90vw !important;
+            }
+        }
     </style>
 </head>
 <body>
-
-        <p>
-    <img src="logo-leadership-transp.png" style="width:400px" />
-   </p>
-    <p style="width:50vw;padding:1vh auto;text-align: center; color:#fafafa;font-size:1.1rem:">Leadership Cloudcroft exists to cultivate informed, connected, and action-oriented leaders who are committed to understanding and addressing the unique challenges of the Village of Cloudcroft. Through education, collaboration, and real-world experience, we aim to empower a diverse group of residents to build a resilient, thriving community.
+    <p class="logo">
+        <img src="logo-leadership-stack-bravo.png" style="width:400px" alt="Leadership Logo" />
     </p>
-
- 
-
-        <p style="background-color:rgb(245, 245, 245);width:100vw!important;">
-            <iframe src="https://www.cloudcroftreader.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
-        </p>
-        
+    <p class="mission">
+        Leadership Cloudcroft aims to identify and prepare community leaders to address our mountain village's specific challenges. Through monthly classes taught by expert speakers, site visits, and hands-on projects, we connect diverse residents who want to make a difference. Our program builds relationships between local and seasonal neighbors, increases understanding of Cloudcroft's needs, and creates a growing network of informed leaders ready to take action for our community's future.    </p>
+    <div style="margin:4vh;">
+        <button href="mailto:leadership@cloudcroftreader.com" style="padding: 10px 20px; font-size: 1em; background-color: #ffffff; color: #184438; border: none; border-radius: 5px; cursor: pointer;">
+            Learn more
+        </button>
+    </div>
 </body>
 </html>
+<script>
+    const button = document.querySelector('button');
+    button.style.backgroundColor = '#f45b40';
+    button.style.color = '#ffffff';
+    button.addEventListener('click', function() {
+        window.location.href = 'mailto:leadership@cloudcroftreader.com';
+    });
+</script>

@@ -46,6 +46,44 @@
             background-color: rgb(245, 245, 245);
             width: 100vw !important;
         }
+        .box-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+    width: 100%;
+    max-width: 900px;
+}
+
+.box {
+    flex: 1;
+    margin: 0 1em;
+    padding: 2em;
+    background-color: #ffffff;
+    color: #184438;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.box:first-child {
+    margin-left: 0;
+}
+
+.box:last-child {
+    margin-right: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .box-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        margin: 1em 0;
+        width: 90%;
+    }
+}
 
         @media only screen and (max-width: 768px) {
             .mission {
@@ -61,6 +99,11 @@
     <p class="mission">
         Leadership Cloudcroft aims to identify and prepare community leaders to address our mountain village's specific challenges. Through monthly classes taught by expert speakers, site visits, and hands-on projects, we connect diverse residents who want to make a difference. Our program builds relationships between local and seasonal neighbors, increases understanding of Cloudcroft's needs, and creates a growing network of informed leaders ready to take action for our community's future.    </p>
     <div style="margin:4vh;">
+        <div class="box-container">
+    <div class="box">Box 1 Content</div>
+    <div class="box">Box 2 Content</div>
+    <div class="box">Box 3 Content</div>
+</div>
         <button href="mailto:leadership@cloudcroftreader.com" style="padding: 10px 20px; font-size: 1em; background-color: #ffffff; color: #184438; border: none; border-radius: 5px; cursor: pointer;">
             Learn more
         </button>

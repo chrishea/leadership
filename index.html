@@ -4,232 +4,183 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leadership Cloudcroft</title>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
-<style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+    <style>
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
-            background-color: ##212121;
-            font-family: newsreader,sans-serif;
+            background-color: #212121;
+            font-family: 'Newsreader', sans-serif;
             text-align: center;
             color: #212121;
-            font-size:1.1rem;
-            line-height:1.4rem;
+            font-size: 1.1rem;
+            line-height: 1.4rem;
         }
-
         .logo {
             padding: 2vh;
-            width:80%
+            width: 80%;
         }
-
         h1 {
             font-size: 1.7em;
             margin: 0;
-            padding-bottom:1.7rem;
-            font-family:'open sans', sans-serif;
+            padding-bottom: 1.7rem;
+            font-family: 'Open Sans', sans-serif;
         }
-
         h2 {
             font-size: 1.5em;
             margin: 0.5em 0;
         }
-
         .top-box {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding:4vh 0;
-            width:100vw;
-            background-color:#6F7555
+            padding: 4vh 0;
+            width: 100vw;
+            background-color: #6F7555;
         }
         .mission {
-        
             font-size: 1.33em;
             line-height: 2rem;
-            text-align:left;
+            text-align: left;
             margin: 1.5vh 0 0.5em 0;
-            color:#f1f6f0;
-            width:60ch;
-            padding-bottom: 1em;;
-        }
-
-        .reader-embed {
-         
-            width: 100vw !important;
+            color: #f1f6f0;
+            width: 60ch;
+            padding-bottom: 1em;
         }
         .box-container {
             display: flex;
             justify-content: space-between;
             width: 90vw;
             max-width: 1240px;
-            margin:3vh 0;
-}
-
-.box {
-    flex: 0  0 calc(50% - 2em);
-
-    margin: 0 1em;
-    padding: 1.5em;
-    flex: 0 0 calc(50% - 2em);
-    background-color: #efeeee;
-    color: #184438;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
-
-    box-sizing: border-box;
-}
-
-.box:first-child {
-    margin-left: 0;
-}
-
-.box:last-child {
-    margin-right: 0;
-}
-
-button {
-    padding: 2vh 4em;
-    margin-top:3vh; 
-    font-size: 1em; 
-    background-color: #ffffff; 
-    color: #184438; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer;
-}
-
-@media only screen and (max-width: 768px) {
-    .box-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .box {
-        margin: 1em 0;
-        width: 90%;
-    }
-
-    .mission {
-         width: 80vw !important;
+            margin: 3vh 0;
+        }
+        .box {
+            flex: 0 0 calc(50% - 2em);
+            margin: 0 1em;
+            padding: 1.5em;
+            background-color: #efeeee;
+            color: #184438;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: left;
+            box-sizing: border-box;
+        }
+        .box:first-child { margin-left: 0; }
+        .box:last-child { margin-right: 0; }
+        button {
+            padding: 2vh 4em;
+            margin-top: 3vh;
+            font-size: 1em;
+            background-color: #fff;
+            color: #184438;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        a {
+            font-weight: 600;
+            color: #4682b4;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        a:hover { color: orangered; }
+        @media only screen and (max-width: 768px) {
+            .box-container {
+                flex-direction: column;
+                align-items: center;
             }
-    }
+            .box {
+                margin: 1em 0;
+                width: 90%;
+            }
+            .mission {
+                width: 80vw !important;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="top-box">
-    <p class="logo">
-        <img src="icon-leadership-circle-white.png" style="width:100%;max-width:400px" alt="Leadership Logo" />
-       
-    </p>
-    <p class="mission">
-        <Span style="color:#FFDD57">Leadership Cloudcroft</Span> is a new initiative designed to address an old problem in Cloudcroft: developing volunteer leaders who are prepared to take charge.
-        <br /><br />
-        <Span style="color:#FFDD57">Leadership Cloudcroft</Span> aims to help cultivate the next generation of community champions to address our mountain village's unique challenges by identifying and preparing community leaders who are prepared to take charge in volunteer, civic, business, and community roles. 
-    </p>
-</div>
-   
-        <div class="box-container">
-                   <div class="box" style="max-width:50 ch;
-    flex: 0  0 calc(70% - 2em);
- ">
-                <h1>Welcome The Class of 2025</h1>
-                   <p style="width:26 ch;font-size:125%;line-height:36px;"> Keith Hamilton, Victor Estrada, Amy Coor, Christina Olvera, Jorden Scott, Rick Donnelly, Nate Saffle, Jim Miller, Nathan Tompkins, Bri Jonnes, Dana Dunlap, Sandra Barr, Nick Hanna, Ricardo Ruiz, Andrika Ruiz, Jolyn McTeigue 
+        <p class="logo">
+            <img src="icon-leadership-circle-white.png" style="width:100%;max-width:400px" alt="Leadership Logo" />
+        </p>
+        <p class="mission">
+            <span style="color:#FFDD57">Leadership Cloudcroft</span> is a new initiative designed to address an old problem in Cloudcroft: developing volunteer leaders who are prepared to take charge.
+            <br><br>
+            <span style="color:#FFDD57">Leadership Cloudcroft</span> aims to help cultivate the next generation of community champions to address our mountain village's unique challenges by identifying and preparing community leaders who are prepared to take charge in volunteer, civic, business, and community roles.
         </p>
     </div>
-</div>
-
-          
-       <div class="box-container">
-            <div class="box">
-                <h1>The Challenge</h1>
-                As a small mountain village, Cloudcroft depends on volunteers from the community to lead its local institutions: the government, school board, library, fire department, and numerous committees that help shape its public services. Despite these volunteers' critical roles, there is no formal effort to identify, recruit, or train these leaders. 
-
-                  <br /><br /> Most take office with no background or experience in their new roles. That lack of preparation can lead to oversights, mistakes, burnout, and missed opportunities.
-
-
-            </div>
-            <div class="box">
-                <h1>The Goals</h1>
-                The objective of <b> Leadership Cloudcroft</b> is identify and help prepare leaders who are prepared to take charge in volunteer, civic, business, and community roles. 
-                <br /><br />
-                Participants will get practical knowledge about the issues facing the Village. Class members gain valuable knowledge and insights into the public issues shaping Cloudcroft's future through monthly sessions featuring expert speakers, immersive site visits, and collaborative projects.  
-<br /><br />
-We hope it will prove an invaluable educational, networking, and motivating resource.
-            </div>
+    <div class="box-container">
+        <div class="box" style="max-width:50ch; flex:0 0 calc(70% - 2em);">
+            <h1>Welcome The Class of 2025</h1>
+            <p style="width:26ch;font-size:125%;line-height:36px;">
+                Keith Hamilton, Victor Estrada, Amy Coor, Christina Olvera, Jorden Scott, Rick Donnelly, Nate Saffle, Jim Miller, Nathan Tompkins, Bri Jonnes, Dana Dunlap, Sandra Barr, Nick Hanna, Ricardo Ruiz, Andrika Ruiz, Jolyn McTeigue
+            </p>
         </div>
-    
-        <div class="box-container">
-            <div class="box"><h1>The Program</h1>
-                The Class of 2025 will occur over five months: June through October 2025. There will be six class days, each focusing on a specific topic.
-                 <br /><br /> 
-                 Classes will be held in a centrally-located space in the Village, starting in the morning and running til 3 p.m.
-                <br /><br />
-                Classes are designed to be highly interactive, allowing participants to discuss issues with the faculty actively. We also anticipate small working groups collaborating on assignments to address particular problems.
-      </div>
-
-            <div class="box">
-                <h1>The Curriculum</h1>
-                The program focuses on our top challenges: Governance, Infrastructure, Fire, Economic Development, Healthcare, Schools, and more.
-                    <br /><br />
-                    We will take a deep dive into these topics. The faculty features people intimately familiar with a topic and offers a first-hand look at the challenges and opportunities.   <br /><br />
-                  In some cases, we visit sites for a first-hand look, such as a tour of the village water/wastewater facilities.
-                       </div>
+    </div>
+    <div class="box-container">
+        <div class="box">
+            <h1>The Challenge</h1>
+            As a small mountain village, Cloudcroft depends on volunteers from the community to lead its local institutions: the government, school board, library, fire department, and numerous committees that help shape its public services. Despite these volunteers' critical roles, there is no formal effort to identify, recruit, or train these leaders.
+            <br><br>
+            Most take office with no background or experience in their new roles. That lack of preparation can lead to oversights, mistakes, burnout, and missed opportunities.
         </div>
-  
-        <div class="box-container">
-            
-             <div class="box">
-                <h1>How to Support</h1>
-    
-                We seek three Founding Members for the Leadership Cloudcroft program who share our vision of a sustainable, annual program. 
-   <br ><br />
-We also value any logistical support that helps us provide meeting space, materials, and lunches for our class.
-
-                 
-                <br ><br />
-                If you are interested in joining us in launching this important program, please get in touch with us at
-                <a   href="mailto:sponsor@leadershipcloudcroft.com" 
-                style=" font-weight:600;  color:#4682b4;
-                text-decoration:none; "  
-                 onmouseover="this.style.color='orangered'">
-                sponsor@leadershipcloudcroft.com</a>
-                <br /><br />
-                   Serving on the program's Advisory Board are Trustee<b> Gail McCoy</b>, Mayor<b> Tim King</b>,  and <b>Chris Hearne</b>.  The Executive Director is <b>Hannah Dean</b>.
-                   <br /><br />
-                   <b> Leadership Cloudcroft</b> is produced by the  <a href="https://www.cloudcroftreader.com"  
-                   style="font-weight:600; text-decoration:none;color:#4682b4" 
-                   href="https://forms.gle/aA49Men4x1Ti9RpX6" 
-                   onmouseover="this.style.color='orangered';" 
-                   onmouseout="this.style.Color='#4682b4';">Cloudcroft Reader</a>, the voice of the mountain.
-            <br /><br />For more information please reach us at 
-            <a  href="mailto:hello@leadershipcloudcroft.com" style=" font-weight:600;  color:#4682b4;
-            text-decoration:none;"  
-             onmouseover="this.style.color='orangered'""> 
-                hello@leadershipcloudcroft.com
-            </a>
+        <div class="box">
+            <h1>The Goals</h1>
+            The objective of <b>Leadership Cloudcroft</b> is to identify and help prepare leaders who are prepared to take charge in volunteer, civic, business, and community roles.
+            <br><br>
+            Participants will get practical knowledge about the issues facing the Village. Class members gain valuable knowledge and insights into the public issues shaping Cloudcroft's future through monthly sessions featuring expert speakers, immersive site visits, and collaborative projects.
+            <br><br>
+            We hope it will prove an invaluable educational, networking, and motivating resource.
         </div>
+    </div>
+    <div class="box-container">
+        <div class="box">
+            <h1>The Program</h1>
+            The Class of 2025 will occur over five months: June through October 2025. There will be six class days, each focusing on a specific topic.
+            <br><br>
+            Classes will be held in a centrally-located space in the Village, starting in the morning and running til 3 p.m.
+            <br><br>
+            Classes are designed to be highly interactive, allowing participants to discuss issues with the faculty actively. We also anticipate small working groups collaborating on assignments to address particular problems.
         </div>
-
-
-       
-
-    <footer style=" margin-top:4vh;
-        bottom:2vh!important; 
-        padding-bottom:2em!important;
-        width: 100%; 
-        font-size:.8rem;
-        text-align: center; 
-        color: black; ">
-
-        <p><img style="width:300px" src="poster-lcc-bear.png" /> <br /><br />
-        &copy; copyright Leadership Cloudcroft / Cloudcroft Reader 2025
+        <div class="box">
+            <h1>The Curriculum</h1>
+            The program focuses on our top challenges: Governance, Infrastructure, Fire, Economic Development, Healthcare, Schools, and more.
+            <br><br>
+            We will take a deep dive into these topics. The faculty features people intimately familiar with a topic and offers a first-hand look at the challenges and opportunities.
+            <br><br>
+            In some cases, we visit sites for a first-hand look, such as a tour of the village water/wastewater facilities.
+        </div>
+    </div>
+    <div class="box-container">
+        <div class="box">
+            <h1>How to Support</h1>
+            We seek three Founding Members for the Leadership Cloudcroft program who share our vision of a sustainable, annual program.
+            <br><br>
+            We also value any logistical support that helps us provide meeting space, materials, and lunches for our class.
+            <br><br>
+            If you are interested in joining us in launching this important program, please get in touch with us at
+            <a href="mailto:sponsor@leadershipcloudcroft.com">sponsor@leadershipcloudcroft.com</a>
+            <br><br>
+            Serving on the program's Advisory Board are Trustee <b>Gail McCoy</b>, Mayor <b>Tim King</b>, and <b>Chris Hearne</b>. The Executive Director is <b>Hannah Dean</b>.
+            <br><br>
+            <b>Leadership Cloudcroft</b> is produced by the
+            <a href="https://www.cloudcroftreader.com">Cloudcroft Reader</a>, the voice of the mountain.
+            <br><br>
+            For more information please reach us at
+            <a href="mailto:hello@leadershipcloudcroft.com">hello@leadershipcloudcroft.com</a>
+        </div>
+    </div>
+    <footer style="margin-top:4vh; padding-bottom:2em; width:100%; font-size:.8rem; text-align:center; color:black;">
+        <p>
+            <img style="width:300px" src="poster-lcc-bear.png" alt="Leadership Cloudcroft Poster" /><br><br>
+            &copy; copyright Leadership Cloudcroft / Cloudcroft Reader 2025
         </p>
-        </footer>
+    </footer>
+</body>
 </html>
-

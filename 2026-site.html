@@ -506,68 +506,6 @@
       }
     }
 
-    /* ========== Program Section ========== */
-    .program {
-      background: var(--color-bg-muted);
-      border-top: 1px solid var(--color-border-light);
-      border-bottom: 1px solid var(--color-border-light);
-    }
-
-    .events-grid {
-      display: grid;
-      gap: var(--space-5);
-      grid-template-columns: 1fr;
-    }
-
-    @media (min-width: 768px) {
-      .events-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .event-card {
-      background: var(--color-bg-card);
-      border-radius: var(--radius-xl);
-      padding: var(--space-8) var(--space-6);
-      border: 1px solid var(--color-border-light);
-      transition: all var(--transition-base);
-      position: relative;
-    }
-
-    .event-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--color-accent);
-    }
-
-    .event-num {
-      display: inline-block;
-      font-family: var(--font-display);
-      font-size: var(--text-sm);
-      font-weight: 600;
-      color: var(--color-accent);
-      letter-spacing: 0.08em;
-      margin-bottom: var(--space-3);
-    }
-
-    .event-card h3 {
-      margin-bottom: var(--space-2);
-      color: var(--color-primary);
-    }
-
-    .event-date {
-      font-size: var(--text-sm);
-      font-weight: 500;
-      color: var(--color-text);
-      margin-bottom: var(--space-4);
-      padding-bottom: var(--space-4);
-      border-bottom: 1px solid var(--color-border-light);
-    }
-
-    .event-card p {
-      font-size: var(--text-sm);
-    }
-
     /* ========== Focus Topics ========== */
     .topics-grid {
       display: grid;
@@ -1108,7 +1046,6 @@
     <div class="nav-inner">
       <a href="#top" class="nav-brand"><span class="nav-brand-mark">◆</span> Leadership Cloudcroft</a>
       <ul class="nav-links">
-        <li><a href="#program">Program</a></li>
         <li><a href="#focus">Focus</a></li>
         <li><a
             href="https://docs.google.com/forms/d/e/1FAIpQLSfmFMr3zeY6s8_gxuTCyTgpVTzu18j6NzqQClxjr7tzeYO7-g/viewform">Apply</a>
@@ -1140,37 +1077,6 @@
     </div>
   </header>
 
-  <!-- ========== The 2026 Program ========== -->
-  <section class="program" id="program">
-    <div class="container">
-      <div class="reveal">
-        <span class="section-eyebrow">The 2026 Program</span>
-        <h2 class="section-title">Two signature events. One conversation that matters.</h2>
-        <p class="section-lead">Year two takes a "quasi think tank" approach. Fewer sessions, deeper substance, and real
-          time with the people running the village.</p>
-      </div>
-
-      <div class="events-grid">
-        <article class="event-card reveal">
-          <span class="event-num">01 — Field Day</span>
-          <h3>Wells &amp; Springs Tour</h3>
-          <div class="event-date">Tuesday, July 14 · Led by JJ · Ends at Ski Cloudcroft</div>
-          <p>The signature field experience: a behind-the-scenes water-infrastructure tour through the village's wells,
-            springs, and tanks — closing with lunch at Ski Cloudcroft and a conversation with the ski-area owners on
-            water, snow, and Forest Service realities.</p>
-        </article>
-
-        <article class="event-card reveal">
-          <span class="event-num">02 — Capstone</span>
-          <h3>Responsible Tourism Forum</h3>
-          <div class="event-date">Mid-August · Village venue TBA</div>
-          <p>A working forum on sustainable tourism for Cloudcroft — practitioners, officials, and participants in
-            structured, constructive dialogue about what the village's tourism future should look like.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <!-- ========== Focus Topics ========== -->
   <section id="focus">
     <div class="container">
@@ -1187,7 +1093,13 @@
           <h3>Water &amp; Water Systems</h3>
           <p>How Cloudcroft gets, stores, and protects its water — from the wells and springs to the tanks above town.
             Led by the people who actually operate the system.</p>
-          <span class="topic-highlight">Includes a field trip to the village water tanks</span>
+          <p>
+            <strong>01 — Field Day · Wells &amp; Springs Tour</strong><br>
+            Tuesday, July 14 · Led by JJ · Ends at Ski Cloudcroft<br>
+            The signature field experience: a behind-the-scenes water-infrastructure tour through the village's wells,
+            springs, and tanks — closing with lunch at Ski Cloudcroft and a conversation with the ski-area owners on
+            water, snow, and Forest Service realities.
+          </p>
         </article>
 
         <article class="topic-card reveal">
@@ -1195,6 +1107,12 @@
           <h3>Sustainable Tourism</h3>
           <p>How a small mountain village grows tourism without overburdening its resources or losing the character that
             draws people here in the first place. Multiple leading voices in tourism and economic development.</p>
+          <p>
+            <strong>02 — Capstone · Responsible Tourism Forum</strong><br>
+            Mid-August · Village venue TBA<br>
+            A working forum on sustainable tourism for Cloudcroft — practitioners, officials, and participants in
+            structured, constructive dialogue about what the village's tourism future should look like.
+          </p>
         </article>
       </div>
     </div>

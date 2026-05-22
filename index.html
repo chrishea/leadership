@@ -51,8 +51,17 @@
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.35; transform: scale(1.4); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.35;
+        transform: scale(1.4);
+      }
     }
 
     .urgency-cta {
@@ -504,68 +513,6 @@
       .hero h1 {
         font-size: var(--text-6xl);
       }
-    }
-
-    /* ========== Program Section ========== */
-    .program {
-      background: var(--color-bg-muted);
-      border-top: 1px solid var(--color-border-light);
-      border-bottom: 1px solid var(--color-border-light);
-    }
-
-    .events-grid {
-      display: grid;
-      gap: var(--space-5);
-      grid-template-columns: 1fr;
-    }
-
-    @media (min-width: 768px) {
-      .events-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .event-card {
-      background: var(--color-bg-card);
-      border-radius: var(--radius-xl);
-      padding: var(--space-8) var(--space-6);
-      border: 1px solid var(--color-border-light);
-      transition: all var(--transition-base);
-      position: relative;
-    }
-
-    .event-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--color-accent);
-    }
-
-    .event-num {
-      display: inline-block;
-      font-family: var(--font-display);
-      font-size: var(--text-sm);
-      font-weight: 600;
-      color: var(--color-accent);
-      letter-spacing: 0.08em;
-      margin-bottom: var(--space-3);
-    }
-
-    .event-card h3 {
-      margin-bottom: var(--space-2);
-      color: var(--color-primary);
-    }
-
-    .event-date {
-      font-size: var(--text-sm);
-      font-weight: 500;
-      color: var(--color-text);
-      margin-bottom: var(--space-4);
-      padding-bottom: var(--space-4);
-      border-bottom: 1px solid var(--color-border-light);
-    }
-
-    .event-card p {
-      font-size: var(--text-sm);
     }
 
     /* ========== Focus Topics ========== */
@@ -1041,8 +988,15 @@
 
     /* ========== Load-in Animations ========== */
     @keyframes slideUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .slide-up {
@@ -1050,12 +1004,24 @@
       animation: slideUp 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    .delay-1 { animation-delay: 100ms; }
-    .delay-2 { animation-delay: 200ms; }
-    .delay-3 { animation-delay: 300ms; }
-    .delay-4 { animation-delay: 400ms; }
+    .delay-1 {
+      animation-delay: 100ms;
+    }
+
+    .delay-2 {
+      animation-delay: 200ms;
+    }
+
+    .delay-3 {
+      animation-delay: 300ms;
+    }
+
+    .delay-4 {
+      animation-delay: 400ms;
+    }
 
     @media (prefers-reduced-motion: reduce) {
+
       .slide-up,
       .reveal {
         opacity: 1 !important;
@@ -1099,7 +1065,9 @@
     <div class="urgency-inner">
       <span class="urgency-pulse" aria-hidden="true"></span>
       <span>Applications close <strong>Wednesday, May 27</strong> — 5 days left</span>
-      <a class="urgency-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSfmFMr3zeY6s8_gxuTCyTgpVTzu18j6NzqQClxjr7tzeYO7-g/viewform" target="_blank" rel="noopener">Apply now →</a>
+      <a class="urgency-cta"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfmFMr3zeY6s8_gxuTCyTgpVTzu18j6NzqQClxjr7tzeYO7-g/viewform"
+        target="_blank" rel="noopener">Apply now →</a>
     </div>
   </div>
 
@@ -1108,7 +1076,6 @@
     <div class="nav-inner">
       <a href="#top" class="nav-brand"><span class="nav-brand-mark">◆</span> Leadership Cloudcroft</a>
       <ul class="nav-links">
-        <li><a href="#program">Program</a></li>
         <li><a href="#focus">Focus</a></li>
         <li><a
             href="https://docs.google.com/forms/d/e/1FAIpQLSfmFMr3zeY6s8_gxuTCyTgpVTzu18j6NzqQClxjr7tzeYO7-g/viewform">Apply</a>
@@ -1127,49 +1094,23 @@
         <div class="hero-copy">
           <div class="hero-eyebrow slide-up">2026 Cohort · Year Two · Applications close May 27</div>
           <h1 class="slide-up delay-1">What makes Cloudcroft <span>tick?</span></h1>
-          <p class="hero-lead slide-up delay-2">Its water supply. Its seasonal economy. Its long-term planning challenges. Leadership Cloudcroft is the program that takes you behind the scenes — and gathers residents who want to understand this community more deeply and take action. Year two: fewer sessions, deeper substance, real time with the people running the village.</p>
+          <p class="hero-lead slide-up delay-2">Its water supply. Its seasonal economy. Its long-term planning
+            challenges. Leadership Cloudcroft is the program that takes you behind the scenes — and gathers residents
+            who want to understand this community more deeply and take action. Year two: fewer sessions, deeper
+            substance, real time with the people running the village.</p>
           <div class="hero-actions slide-up delay-3">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmFMr3zeY6s8_gxuTCyTgpVTzu18j6NzqQClxjr7tzeYO7-g/viewform" target="_blank" rel="noopener" class="btn btn-primary btn-arrow">Apply by May 27</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmFMr3zeY6s8_gxuTCyTgpVTzu18j6NzqQClxjr7tzeYO7-g/viewform"
+              target="_blank" rel="noopener" class="btn btn-primary btn-arrow">Apply by May 27</a>
             <a href="#program" class="btn btn-secondary">Explore the program</a>
           </div>
         </div>
         <div class="hero-image slide-up delay-2">
-          <img src="hero-leadership.webp" alt="Leadership Cloudcroft cohort in the field." loading="eager" decoding="async">
+          <img src="hero-leadership.webp" alt="Leadership Cloudcroft cohort in the field." loading="eager"
+            decoding="async">
         </div>
       </div>
     </div>
   </header>
-
-  <!-- ========== The 2026 Program ========== -->
-  <section class="program" id="program">
-    <div class="container">
-      <div class="reveal">
-        <span class="section-eyebrow">The 2026 Program</span>
-        <h2 class="section-title">Two signature events. One conversation that matters.</h2>
-        <p class="section-lead">Year two takes a "quasi think tank" approach. Fewer sessions, deeper substance, and real
-          time with the people running the village.</p>
-      </div>
-
-      <div class="events-grid">
-        <article class="event-card reveal">
-          <span class="event-num">01 — Field Day</span>
-          <h3>Wells &amp; Springs Tour</h3>
-          <div class="event-date">Tuesday, July 14 · Led by JJ · Ends at Ski Cloudcroft</div>
-          <p>The signature field experience: a behind-the-scenes water-infrastructure tour through the village's wells,
-            springs, and tanks — closing with lunch at Ski Cloudcroft and a conversation with the ski-area owners on
-            water, snow, and Forest Service realities.</p>
-        </article>
-
-        <article class="event-card reveal">
-          <span class="event-num">02 — Capstone</span>
-          <h3>Responsible Tourism Forum</h3>
-          <div class="event-date">Mid-August · Village venue TBA</div>
-          <p>A working forum on sustainable tourism for Cloudcroft — practitioners, officials, and participants in
-            structured, constructive dialogue about what the village's tourism future should look like.</p>
-        </article>
-      </div>
-    </div>
-  </section>
 
   <!-- ========== Focus Topics ========== -->
   <section id="focus">
@@ -1185,16 +1126,39 @@
         <article class="topic-card reveal">
           <span class="topic-tag">Topic One</span>
           <h3>Water &amp; Water Systems</h3>
-          <p>How Cloudcroft gets, stores, and protects its water — from the wells and springs to the tanks above town.
+          <p style="font-size:110%;font-weight:500font-family:sans-serif"><strong>Field Day · Wells &amp; Springs
+              Tour</strong><br>
+            <span style="font-size:80%">Tuesday, July 14 · Led by JJ · Ends at Ski Cloudcroft </span>
+            </span>
+          </p>
+          <br />
+          <p>How Cloudcroft gets, stores, and protects its water — from the wells and springs to the tanks above
+            town.
             Led by the people who actually operate the system.</p>
-          <span class="topic-highlight">Includes a field trip to the village water tanks</span>
+          <p>
+
+            The signature field experience: a behind-the-scenes water-infrastructure tour through the village's
+            wells,
+            springs, and tanks — closing with lunch at Ski Cloudcroft and a conversation with the ski-area owners on
+            water, snow, and Forest Service realities.
+          </p>
         </article>
 
         <article class="topic-card reveal">
           <span class="topic-tag">Topic Two</span>
-          <h3>Sustainable Tourism</h3>
+          <h3>Responsible Tourism</h3>
+          <p>
+            <strong>
+              Mid-August · Village venue TBA<br>
+            </strong>
+          </p>
+          <br />
           <p>How a small mountain village grows tourism without overburdening its resources or losing the character that
-            draws people here in the first place. Multiple leading voices in tourism and economic development.</p>
+            draws people here in the first place. A working forum on sustainable tourism for Cloudcroft — practitioners,
+            officials, and participants in
+            structured, constructive dialogue about what the village's tourism future should look like.
+          </p>
+
         </article>
       </div>
     </div>
@@ -1206,7 +1170,10 @@
       <div class="reveal">
         <span class="section-eyebrow">Apply now · Deadline Wednesday, May 27</span>
         <h2>Five days. One application.</h2>
-        <p class="apply-lead">Applications close <strong>Wednesday, May 27, 2026</strong>. The cohort and full event schedule are announced together, so you'll know your dates from day one — starting with the invite-only kickoff at <a href="https://discovercloudcroft.com/eat/brewery.html" target="_blank" rel="noopener">The Distillery</a> on Thursday, June 11.</p>
+        <p class="apply-lead">Applications close <strong>Wednesday, May 27, 2026</strong>. The cohort and full event
+          schedule are announced together, so you'll know your dates from day one — starting with the invite-only
+          kickoff at <a href="https://discovercloudcroft.com/eat/brewery.html" target="_blank" rel="noopener">The
+            Distillery</a> on Thursday, June 11.</p>
 
         <div class="apply-meta">
           <div class="apply-meta-item">
@@ -1215,7 +1182,8 @@
           </div>
           <div class="apply-meta-item">
             <span class="label">Kickoff</span>
-            <span class="value">Thu, June 11 · <a href="https://discovercloudcroft.com/eat/brewery.html" target="_blank" rel="noopener">The Distillery</a></span>
+            <span class="value">Thu, June 11 · <a href="https://discovercloudcroft.com/eat/brewery.html" target="_blank"
+                rel="noopener">The Distillery</a></span>
           </div>
           <div class="apply-meta-item">
             <span class="label">Who can apply</span>
@@ -1224,9 +1192,12 @@
         </div>
 
         <div class="hero-actions">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmFMr3zeY6s8_gxuTCyTgpVTzu18j6NzqQClxjr7tzeYO7-g/viewform" target="_blank" rel="noopener" class="btn btn-on-dark btn-arrow" id="apply-link">Start your application</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmFMr3zeY6s8_gxuTCyTgpVTzu18j6NzqQClxjr7tzeYO7-g/viewform"
+            target="_blank" rel="noopener" class="btn btn-on-dark btn-arrow" id="apply-link">Start your application</a>
         </div>
-        <p class="apply-fine">Open to village residents, seasonal residents, business owners, and school families. The program wraps with an informal graduation coffee at the Cloudcroft Library and a $100 participation stipend.</p>
+        <p class="apply-fine">Open to village residents, seasonal residents, business owners, and school families. The
+          program wraps with an informal graduation coffee at the Cloudcroft Library and a $100 participation stipend.
+        </p>
       </div>
     </div>
   </section>
@@ -1238,8 +1209,22 @@
         <span class="section-eyebrow">Year One · 2025</span>
         <h2 class="section-title">A foundation built on how the village really runs.</h2>
         <div class="recap-body">
-          <p>Last year's cohort didn't just sit in a room and listen to lectures — they got out. Fourteen participants spent six class days, June through October 2025, on the issues that most shape Cloudcroft's future: governance, infrastructure, fire, economic development, healthcare, and schools. Speakers included Village Attorney Zach Cook, municipal leaders Debbie Lee, Karen Gutierrez, and Dora, alongside local-government voices Gail and Tim, and grants specialist Lauren.</p>
-          <p>Field experiences ranged from a <a href="https://www.cloudcroftreader.com/p/expert-says-cloudcroft-must-fix-aging" target="_blank" rel="noopener">Wastewater Treatment Plant tour with Scott Powell</a> and a <a href="https://www.cloudcroftreader.com/p/public-safety-leadership-cloudcroft" target="_blank" rel="noopener">deep-dive Emergency Management forum</a> to a <a href="https://www.cloudcroftreader.com/p/watch-king-and-wiley-debate" target="_blank" rel="noopener">public mayoral debate between King and Wiley</a>. The <a href="https://www.cloudcroftreader.com/p/developing-cloudcroft-volunteer-leaders" target="_blank" rel="noopener">Cloudcroft Reader's launch announcement</a> laid out the original brief: a formal pipeline to identify and prepare the volunteers who run a small mountain village. Year one shaped the year-two redesign — tighter, fewer scheduling conflicts, sharper focus.</p>
+          <p>Last year's cohort didn't just sit in a room and listen to lectures — they got out. Fourteen participants
+            spent six class days, June through October 2025, on the issues that most shape Cloudcroft's future:
+            governance, infrastructure, fire, economic development, healthcare, and schools. Speakers included Village
+            Attorney Zach Cook, municipal leaders Debbie Lee, Karen Gutierrez, and Dora, alongside local-government
+            voices Gail and Tim, and grants specialist Lauren.</p>
+          <p>Field experiences ranged from a <a
+              href="https://www.cloudcroftreader.com/p/expert-says-cloudcroft-must-fix-aging" target="_blank"
+              rel="noopener">Wastewater Treatment Plant tour with Scott Powell</a> and a <a
+              href="https://www.cloudcroftreader.com/p/public-safety-leadership-cloudcroft" target="_blank"
+              rel="noopener">deep-dive Emergency Management forum</a> to a <a
+              href="https://www.cloudcroftreader.com/p/watch-king-and-wiley-debate" target="_blank"
+              rel="noopener">public mayoral debate between King and Wiley</a>. The <a
+              href="https://www.cloudcroftreader.com/p/developing-cloudcroft-volunteer-leaders" target="_blank"
+              rel="noopener">Cloudcroft Reader's launch announcement</a> laid out the original brief: a formal pipeline
+            to identify and prepare the volunteers who run a small mountain village. Year one shaped the year-two
+            redesign — tighter, fewer scheduling conflicts, sharper focus.</p>
         </div>
 
         <div class="recap-stats">
@@ -1271,24 +1256,27 @@
               </a>
             </li>
             <li class="coverage-item">
-              <a href="https://www.cloudcroftreader.com/p/public-safety-leadership-cloudcroft" target="_blank" rel="noopener">
+              <a href="https://www.cloudcroftreader.com/p/public-safety-leadership-cloudcroft" target="_blank"
+                rel="noopener">
                 <img
                   src="https://substackcdn.com/image/fetch/$s_!obWg!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-video.s3.amazonaws.com%2Fvideo_upload%2Fpost%2F150264137%2Fc945b7a5-620e-4871-97f8-29011cbdb850%2Ftranscoded-1729022094.png"
-                  alt="Cloudcroft Fire Risk Forum video — emergency management session."
-                  loading="lazy"
-                  decoding="async"
+                  alt="Cloudcroft Fire Risk Forum video — emergency management session." loading="lazy" decoding="async"
                   style="display:block;width:100%;max-width:320px;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius-md);margin-bottom:var(--space-3);">
                 <span class="coverage-meta">Cloudcroft Reader · September 2025</span>
                 <div class="coverage-title">Public Safety: Leadership Cloudcroft Emergency Management Notes</div>
-                <p class="coverage-desc">A recap of the cohort's Emergency Management session at the High School Commons — first responders, school safety, the VFD, federal incident management teams, FireWise, and Cloudcroft's standing as New Mexico's number-one at-risk community for fire.</p>
+                <p class="coverage-desc">A recap of the cohort's Emergency Management session at the High School Commons
+                  — first responders, school safety, the VFD, federal incident management teams, FireWise, and
+                  Cloudcroft's standing as New Mexico's number-one at-risk community for fire.</p>
                 <span class="coverage-link">Read the article</span>
               </a>
             </li>
             <li class="coverage-item">
-              <a href="https://www.cloudcroftreader.com/p/expert-says-cloudcroft-must-fix-aging" target="_blank" rel="noopener">
+              <a href="https://www.cloudcroftreader.com/p/expert-says-cloudcroft-must-fix-aging" target="_blank"
+                rel="noopener">
                 <span class="coverage-meta">Cloudcroft Reader · 2025 Field Trip</span>
                 <div class="coverage-title">Expert Says Cloudcroft Must Fix Aging Wastewater Treatment Plant</div>
-                <p class="coverage-desc">Coverage from the cohort's tour of the village's aging Wastewater Treatment Plant with Scott Powell — the infrastructure reality behind everyday village life.</p>
+                <p class="coverage-desc">Coverage from the cohort's tour of the village's aging Wastewater Treatment
+                  Plant with Scott Powell — the infrastructure reality behind everyday village life.</p>
                 <span class="coverage-link">Read the article</span>
               </a>
             </li>
@@ -1296,13 +1284,13 @@
               <a href="https://www.cloudcroftreader.com/p/watch-king-and-wiley-debate" target="_blank" rel="noopener">
                 <img
                   src="https://substackcdn.com/image/fetch/$s_!Zlam!,w_1200,h_600,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-video.s3.amazonaws.com%2Fvideo_upload%2Fpost%2F176530569%2Fcb2e7335-92de-4803-99ee-b59e4ca58ffd%2Ftranscoded-00001.png"
-                  alt="Mayoral candidates Tim King and Dusty Wiley debate at the Lodge Pavilion."
-                  loading="lazy"
+                  alt="Mayoral candidates Tim King and Dusty Wiley debate at the Lodge Pavilion." loading="lazy"
                   decoding="async"
                   style="display:block;width:100%;max-width:320px;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius-md);margin-bottom:var(--space-3);">
                 <span class="coverage-meta">Cloudcroft Reader · 2025 Public Forum</span>
                 <div class="coverage-title">Watch the King &amp; Wiley Mayoral Debate</div>
-                <p class="coverage-desc">The public mayoral debate the cohort hosted — civic life on the mountain, in front of a microphone.</p>
+                <p class="coverage-desc">The public mayoral debate the cohort hosted — civic life on the mountain, in
+                  front of a microphone.</p>
                 <span class="coverage-link">Watch the debate</span>
               </a>
             </li>
@@ -1312,12 +1300,18 @@
         <figure class="alumni-quote reveal">
           <div class="alumni-mark" aria-hidden="true">"</div>
           <blockquote>
-            <p>This program has been both a wonderful learning opportunity and a real eye-opener to the challenges Cloudcroft is facing. I've come away with a deeper understanding of how important it is for us to work together for a better future — bringing our individual strengths to the table, setting aside pride, and building a community that truly represents and serves its people. I've also learned that while we need to take these challenges seriously, we can't lose sight of joy.</p>
-            <p>Leadership Cloudcroft is such a gift to this community — it not only equips leaders but enriches life for every resident.</p>
+            <p>This program has been both a wonderful learning opportunity and a real eye-opener to the challenges
+              Cloudcroft is facing. I've come away with a deeper understanding of how important it is for us to work
+              together for a better future — bringing our individual strengths to the table, setting aside pride, and
+              building a community that truly represents and serves its people. I've also learned that while we need to
+              take these challenges seriously, we can't lose sight of joy.</p>
+            <p>Leadership Cloudcroft is such a gift to this community — it not only equips leaders but enriches life for
+              every resident.</p>
           </blockquote>
           <figcaption>
             <span class="alumni-name">Andrika Ruiz</span>
-            <span class="alumni-meta">Local author, business owner, Village Library Advisory Board Chair · 2025 LC cohort</span>
+            <span class="alumni-meta">Local author, business owner, Village Library Advisory Board Chair · 2025 LC
+              cohort</span>
           </figcaption>
         </figure>
       </div>
@@ -1352,7 +1346,8 @@
           </li>
           <li class="leadership-card">
             <span class="name">Chris Hearne</span>
-            <span class="role">Board Member · Editor, <a href="https://cloudcroftreader.com" target="_blank" rel="noopener">Cloudcroft Reader</a></span>
+            <span class="role">Board Member · Editor, <a href="https://cloudcroftreader.com" target="_blank"
+                rel="noopener">Cloudcroft Reader</a></span>
           </li>
         </ul>
       </div>
@@ -1368,8 +1363,10 @@
           <p class="footer-tag">A civic leadership program for the Village of Cloudcroft, New Mexico.</p>
         </div>
         <div class="footer-contact">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmFMr3zeY6s8_gxuTCyTgpVTzu18j6NzqQClxjr7tzeYO7-g/viewform" target="_blank" rel="noopener">Apply for the 2026 cohort →</a>
-          <a href="https://www.facebook.com/profile.php?id=61577801261508" target="_blank" rel="noopener">Follow on Facebook →</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmFMr3zeY6s8_gxuTCyTgpVTzu18j6NzqQClxjr7tzeYO7-g/viewform"
+            target="_blank" rel="noopener">Apply for the 2026 cohort →</a>
+          <a href="https://www.facebook.com/profile.php?id=61577801261508" target="_blank" rel="noopener">Follow on
+            Facebook →</a>
         </div>
       </div>
       <div class="footer-bottom">

@@ -19,7 +19,7 @@
     /* ========== Urgency Banner ========== */
     .urgency-bar {
       background: linear-gradient(135deg, #c97b3f 0%, #a35f2c 100%);
-      color: #102438;
+      color: #ffffff;
       font-size: 0.875rem;
       font-weight: 600;
       letter-spacing: 0.01em;
@@ -153,6 +153,12 @@
 
       --transition-fast: 150ms ease;
       --transition-base: 250ms ease;
+      --transition-bounce: 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+      --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+      --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+      --shadow-soft: 0 10px 30px rgba(16, 36, 56, 0.10);
+      --shadow-glow: 0 14px 36px rgba(28, 58, 82, 0.28);
     }
 
     body {
@@ -237,6 +243,9 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--color-accent);
+      background: rgba(201, 123, 63, 0.10);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-full);
       margin-bottom: var(--space-4);
     }
 
@@ -346,16 +355,16 @@
     }
 
     .btn-primary {
-      background: var(--color-primary);
+      background: var(--gradient-primary);
       color: white;
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-soft);
     }
 
     .btn-primary:hover {
-      background: var(--color-primary-dark);
       color: white;
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-lg);
+      filter: brightness(1.08);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow);
     }
 
     .btn-secondary {
@@ -512,13 +521,13 @@
 
     @media (min-width: 768px) {
       .events-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
     .event-card {
       background: var(--color-bg-card);
-      border-radius: var(--radius-lg);
+      border-radius: var(--radius-xl);
       padding: var(--space-8) var(--space-6);
       border: 1px solid var(--color-border-light);
       transition: all var(--transition-base);
@@ -576,7 +585,7 @@
       padding: var(--space-8);
       border-left: 3px solid var(--color-accent);
       background: var(--color-bg-card);
-      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
       box-shadow: var(--shadow-sm);
       transition: all var(--transition-base);
     }
@@ -638,6 +647,7 @@
 
     .apply .section-eyebrow {
       color: var(--color-accent-light);
+      background: rgba(222, 159, 109, 0.14);
     }
 
     .apply h2 {
@@ -688,12 +698,12 @@
 
     .btn-on-dark {
       background: var(--color-accent);
-      color: var(--color-primary-dark);
+      color: #f5f5f5;
     }
 
     .btn-on-dark:hover {
       background: var(--color-accent-light);
-      color: var(--color-primary-dark);
+      color: #f5f5f5;
     }
 
     .btn-on-dark-ghost {
@@ -770,7 +780,7 @@
       background: var(--color-bg-card);
       border: 1px solid var(--color-border-light);
       border-left: 3px solid var(--color-primary);
-      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
       transition: all var(--transition-base);
     }
 
@@ -839,7 +849,7 @@
       background: var(--color-bg-card);
       border: 1px solid var(--color-border-light);
       border-left: 4px solid var(--color-accent);
-      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
       box-shadow: var(--shadow-sm);
       position: relative;
     }
@@ -925,7 +935,7 @@
     .leadership-card {
       padding: var(--space-5) var(--space-6);
       background: var(--color-bg-card);
-      border-radius: var(--radius-lg);
+      border-radius: var(--radius-xl);
       border: 1px solid var(--color-border-light);
     }
 
@@ -1029,6 +1039,32 @@
       transform: translateY(0);
     }
 
+    /* ========== Load-in Animations ========== */
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .slide-up {
+      opacity: 0;
+      animation: slideUp 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .delay-1 { animation-delay: 100ms; }
+    .delay-2 { animation-delay: 200ms; }
+    .delay-3 { animation-delay: 300ms; }
+    .delay-4 { animation-delay: 400ms; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .slide-up,
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
     /* ========== Tablet+ tweaks ========== */
     @media (min-width: 640px) {
       .container {
@@ -1089,15 +1125,15 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-copy">
-          <div class="hero-eyebrow">2026 Cohort · Year Two · Applications close May 27</div>
-          <h1>What makes Cloudcroft <span>tick?</span></h1>
-          <p class="hero-lead">Its water supply. Its seasonal economy. Its long-term planning challenges. Leadership Cloudcroft is the program that takes you behind the scenes — and gathers residents who want to understand this community more deeply and take action. Year two: fewer sessions, deeper substance, real time with the people running the village.</p>
-          <div class="hero-actions">
+          <div class="hero-eyebrow slide-up">2026 Cohort · Year Two · Applications close May 27</div>
+          <h1 class="slide-up delay-1">What makes Cloudcroft <span>tick?</span></h1>
+          <p class="hero-lead slide-up delay-2">Its water supply. Its seasonal economy. Its long-term planning challenges. Leadership Cloudcroft is the program that takes you behind the scenes — and gathers residents who want to understand this community more deeply and take action. Year two: fewer sessions, deeper substance, real time with the people running the village.</p>
+          <div class="hero-actions slide-up delay-3">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmFMr3zeY6s8_gxuTCyTgpVTzu18j6NzqQClxjr7tzeYO7-g/viewform" target="_blank" rel="noopener" class="btn btn-primary btn-arrow">Apply by May 27</a>
             <a href="#program" class="btn btn-secondary">Explore the program</a>
           </div>
         </div>
-        <div class="hero-image">
+        <div class="hero-image slide-up delay-2">
           <img src="hero-leadership.webp" alt="Leadership Cloudcroft cohort in the field." loading="eager" decoding="async">
         </div>
       </div>
@@ -1109,23 +1145,14 @@
     <div class="container">
       <div class="reveal">
         <span class="section-eyebrow">The 2026 Program</span>
-        <h2 class="section-title">Three signature events. One conversation that matters.</h2>
+        <h2 class="section-title">Two signature events. One conversation that matters.</h2>
         <p class="section-lead">Year two takes a "quasi think tank" approach. Fewer sessions, deeper substance, and real
           time with the people running the village.</p>
       </div>
 
       <div class="events-grid">
         <article class="event-card reveal">
-          <span class="event-num">01 — Kickoff</span>
-          <h3>Cohort Kickoff</h3>
-          <div class="event-date">Thursday, June 11 · 6–8 pm · The Distillery</div>
-          <p>A cocktail-hour kickoff with the new cohort, alumni, village leaders, and a featured guest from the tourism
-            sector. Food, two drink tickets, a season preview, and a check-in with Southwest Sports on plans for the ice
-            rink.</p>
-        </article>
-
-        <article class="event-card reveal">
-          <span class="event-num">02 — Field Day</span>
+          <span class="event-num">01 — Field Day</span>
           <h3>Wells &amp; Springs Tour</h3>
           <div class="event-date">Tuesday, July 14 · Led by JJ · Ends at Ski Cloudcroft</div>
           <p>The signature field experience: a behind-the-scenes water-infrastructure tour through the village's wells,
@@ -1134,7 +1161,7 @@
         </article>
 
         <article class="event-card reveal">
-          <span class="event-num">03 — Capstone</span>
+          <span class="event-num">02 — Capstone</span>
           <h3>Responsible Tourism Forum</h3>
           <div class="event-date">Mid-August · Village venue TBA</div>
           <p>A working forum on sustainable tourism for Cloudcroft — practitioners, officials, and participants in
@@ -1179,7 +1206,7 @@
       <div class="reveal">
         <span class="section-eyebrow">Apply now · Deadline Wednesday, May 27</span>
         <h2>Five days. One application.</h2>
-        <p class="apply-lead">Applications close <strong>Wednesday, May 27, 2026</strong>. The cohort and full event schedule are announced together, so you'll know your dates from day one — starting with the invite-only kickoff at The Distillery on Thursday, June 11.</p>
+        <p class="apply-lead">Applications close <strong>Wednesday, May 27, 2026</strong>. The cohort and full event schedule are announced together, so you'll know your dates from day one — starting with the invite-only kickoff at <a href="https://discovercloudcroft.com/eat/brewery.html" target="_blank" rel="noopener">The Distillery</a> on Thursday, June 11.</p>
 
         <div class="apply-meta">
           <div class="apply-meta-item">
@@ -1188,7 +1215,7 @@
           </div>
           <div class="apply-meta-item">
             <span class="label">Kickoff</span>
-            <span class="value">Thu, June 11 · The Distillery</span>
+            <span class="value">Thu, June 11 · <a href="https://discovercloudcroft.com/eat/brewery.html" target="_blank" rel="noopener">The Distillery</a></span>
           </div>
           <div class="apply-meta-item">
             <span class="label">Who can apply</span>
@@ -1198,7 +1225,6 @@
 
         <div class="hero-actions">
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmFMr3zeY6s8_gxuTCyTgpVTzu18j6NzqQClxjr7tzeYO7-g/viewform" target="_blank" rel="noopener" class="btn btn-on-dark btn-arrow" id="apply-link">Start your application</a>
-          <a href="mailto:hello@leadershipcloudcroft.org" class="btn btn-on-dark-ghost">Questions? Email us</a>
         </div>
         <p class="apply-fine">Open to village residents, seasonal residents, business owners, and school families. The program wraps with an informal graduation coffee at the Cloudcroft Library and a $100 participation stipend.</p>
       </div>
@@ -1246,6 +1272,12 @@
             </li>
             <li class="coverage-item">
               <a href="https://www.cloudcroftreader.com/p/public-safety-leadership-cloudcroft" target="_blank" rel="noopener">
+                <img
+                  src="https://substackcdn.com/image/fetch/$s_!obWg!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-video.s3.amazonaws.com%2Fvideo_upload%2Fpost%2F150264137%2Fc945b7a5-620e-4871-97f8-29011cbdb850%2Ftranscoded-1729022094.png"
+                  alt="Cloudcroft Fire Risk Forum video — emergency management session."
+                  loading="lazy"
+                  decoding="async"
+                  style="display:block;width:100%;max-width:320px;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius-md);margin-bottom:var(--space-3);">
                 <span class="coverage-meta">Cloudcroft Reader · September 2025</span>
                 <div class="coverage-title">Public Safety: Leadership Cloudcroft Emergency Management Notes</div>
                 <p class="coverage-desc">A recap of the cohort's Emergency Management session at the High School Commons — first responders, school safety, the VFD, federal incident management teams, FireWise, and Cloudcroft's standing as New Mexico's number-one at-risk community for fire.</p>
@@ -1309,12 +1341,10 @@
           <li class="leadership-card">
             <span class="name">Amy Coor</span>
             <span class="role">2026 Co-Chair, Board Member · 2025 LC Alumna</span>
-            <p class="bio">Relocated from Artesia in 2020. Planning &amp; Zoning Commission, Parks &amp; Rec, Lodger's Tax Committee, volunteer firefighter, track coach, fitness instructor, and race director for the High Altitude Classic.</p>
           </li>
           <li class="leadership-card">
             <span class="name">Rick Donnelly</span>
             <span class="role">2026 Co-Chair, Board Member · 2025 LC Alumnus</span>
-            <p class="bio">Chairs the Planning &amp; Zoning Commission. Commercial phone tech for Verizon. In Cloudcroft and the southern Sacramentos since 1998; settled in the village in 2024.</p>
           </li>
           <li class="leadership-card">
             <span class="name">Hannah Dean</span>
@@ -1338,7 +1368,6 @@
           <p class="footer-tag">A civic leadership program for the Village of Cloudcroft, New Mexico.</p>
         </div>
         <div class="footer-contact">
-          <a href="mailto:hello@leadershipcloudcroft.org">hello@leadershipcloudcroft.org</a>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmFMr3zeY6s8_gxuTCyTgpVTzu18j6NzqQClxjr7tzeYO7-g/viewform" target="_blank" rel="noopener">Apply for the 2026 cohort →</a>
           <a href="https://www.facebook.com/profile.php?id=61577801261508" target="_blank" rel="noopener">Follow on Facebook →</a>
         </div>

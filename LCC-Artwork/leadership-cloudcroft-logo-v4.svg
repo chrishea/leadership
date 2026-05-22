@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <!-- Background - Sky gradient (lighter to darker) -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4299e1" />
+      <stop offset="100%" stop-color="#1a365d" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main backdrop shape - circle -->
+  <circle cx="250" cy="250" r="220" fill="url(#skyGradient)" />
+</svg>

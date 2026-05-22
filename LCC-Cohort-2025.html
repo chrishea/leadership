@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: newsreader, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-size:17px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .memo-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .memo-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .memo-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .memo-detail {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .memo-detail strong {
+            color: #2c3e50;
+        }
+
+        .overview {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .applicant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .applicant-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .applicant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .applicant-name {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .applicant-email {
+            color: #667eea;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .applicant-info {
+            margin-bottom: 15px;
+        }
+
+        .info-item {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .interest-section, .participation-section {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #28a745;
+        }
+
+        .participation-section {
+            border-left-color: #007bff;
+        }
+
+        .section-label {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .quote-text {
+            font-style: italic;
+            color: #495057;
+            line-height: 1.5;
+        }
+
+        .themes-section, .recommendations-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .themes-list, .recommendations-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .themes-list li, .recommendations-list li {
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            position: relative;
+        }
+
+        .recommendations-list li {
+            border-left-color: #dc3545;
+        }
+
+        .themes-list li::before, .recommendations-list li::before {
+            content: "●";
+            color: #ffc107;
+            font-weight: bold;
+            position: absolute;
+            left: -10px;
+        }
+
+        .recommendations-list li::before {
+            color: #dc3545;
+        }
+
+        .potential-participants {
+            background: white;
+            border: 2px dashed #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #6c757d;
+            font-style: italic;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .applicant-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .memo-title {
+                font-size: 2rem;
+            }
+            
+            .memo-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="memo-header">
+            <h1 class="memo-title">Leadership Cloudcroft</h1>
+            <div class="memo-details">
+                <div class="memo-detail">
+                    <strong>TO:</strong> Leadership Cloudcroft Program Committee
+                </div>
+                <div class="memo-detail">
+                    <strong>FROM:</strong> Program Administration
+                </div>
+                <div class="memo-detail">
+                    <strong>DATE:</strong> May 30, 2025
+                </div>
+                <div class="memo-detail">
+                    <strong>RE:</strong> Leadership Cloudcroft 2025 Program Applicant Summary
+                </div>
+            </div>
+        </div>
+
+        <div class="overview">
+            <h2 class="section-title">Overview</h2>
+            <p>We have <strong>15 applicants.</strong>    12 completed applications with 3 additional names who confirmed without completed applications.</p>
+        </div>
+
+        <div class="applicants-section">
+            <h2 class="section-title">Confirmed Participants (14)</h2>
+            
+            <div class="applicant-grid">
+                <div class="applicant-card">
+                    <div class="applicant-name">1. Sandra Barr</div>
+                    <div class="applicant-email">pieintheskynm@yahoo.com</div>
+                    <div class="applicant-info">
+                        <div class="info-item"><span class="info-label">Address:</span> 408 Swallow Place (full-time resident)</div>
+                        <div class="info-item"><span class="info-label">Status:</span> Registered voter and property owner</div>
+                        <div class="info-item"><span class="info-label">Availability:</span> Yes, work schedule permitting</div>
+                    </div>
+                    <div class="interest-section">
+                        <div class="section-label">Areas of Interest:</div>
+                        <div class="quote-text">I wish to understand how the village government operates and be of service. This is a beautiful place to live and I want help keep it that way-I'll explain more in the question below</div>
+                    </div>
+                    <div class="participation-section">
+                        <div class="section-label">Why Participating:</div>
+                        <div class="quote-text">I'd like to understand how the government works here— understand why people keep quitting -how I can be of service and how we can get the library open! It is incredibly important that the kiddos have activities & somewhere to go over the summer -let's reinvigorate learning through the use of the beautiful library and adjacent programs!</div>
+                    </div>
+                </div>
+
+                <div class="applicant-card">
+                    <div class="applicant-name">2. Amy Coor</div>
+                    <div class="applicant-email">nmcowgirl79@gmail.com</div>
+                    <div class="applicant-info">
+                        <div class="info-item"><span class="info-label">Address:</span> 1210 Blanca Vista (also owns 301 Aspen Circle)</div>
+                        <div class="info-item"><span class="info-label">Status:</span> Registered voter and property owner</div>
+                        <div class="info-item"><span class="info-label">Availability:</span> Full commitment</div>
+                    </div>
+                    <div class="interest-section">
+                        <div class="section-label">Areas of Interest:</div>
+                        <div class="quote-text">I'm interested in learning more about the overall processes in our village.</div>
+                    </div>
+                    <div class="participation-section">
+                        <div class="section-label">Why Participating:</div>
+                        <div class="quote-text">This is a great idea to build up our village and I would be honored to participate.</div>
+                    </div>
+                </div>
+
+                <div class="applicant-card">
+                    <div class="applicant-name">3. Rick Donnelly</div>
+                    <div class="applicant-email">rpdonnelly707@gmail.com</div>
+                    <div class="applicant-info">
+                        <div class="info-item"><span class="info-label">Address:</span> 1312 Blanca Vista (also owns 1308 Blanca Vista)</div>
+                        <div class="info-item"><span class="info-label">Status:</span> Property owner, not registered voter in Cloudcroft</div>
+                        <div class="info-item"><span class="info-label">Availability:</span> Full commitment</div>
+                    </div>
+                    <div class="interest-section">
+                        <div class="section-label">Areas of Interest:</div>
+                        <div class="quote-text">Growth, fire safety, water use and savings.</div>
+                    </div>
+                    <div class="participation-section">
+                        <div class="section-label">Why Participating:</div>
+                        <div class="quote-text">I think the community has a strong position in geographic area for intelligent growth. To do so, thoughtful planning and zoning regs, water distribution and conservation, expand the size of village to bring in vested population for police/fire etc. Over this all, i have seen communities decimated by fire which still has yet to recover. From the fires in Yellowstone in 1988 to Paradise California and even the smaller town of Summerhaven AZ active prevention of fire is a must in a climate changing world.</div>
+                    </div>
+                </div>
+
+                <div class="applicant-card">
+                    <div class="applicant-name">4. Dana Dunlap</div>
+                    <div class="applicant-email">new4cycles2@outlook.com</div>
+                    <div class="applicant-info">
+                        <div class="info-item"><span class="info-label">Address:</span> 200 Woodlands Way</div>
+                        <div class="info-item"><span class="info-label">Status:</span> Registered voter and property owner</div>
+                        <div class="info-item"><span class="info-label">Background:</span> Engineering and program management</div>
+                        <div class="info-item"><span class="info-label">Availability:</span> Full commitment</div>
+                    </div>
+                    <div class="interest-section">
+                        <div class="section-label">Areas of Interest:</div>
+                        <div class="quote-text">Cloudcroft's future is in jeopardy unless we change our ways. I am Interested in improving Infrastructure, Master Planning, Process, and Contract Management capabilities. This format presents an opportunity to network and bring some fresh ideas to the table.</div>
+                    </div>
+                    <div class="participation-section">
+                        <div class="section-label">Why Participating:</div>
+                        <div class="quote-text">Cloudcroft's future leaders must apply critical thinking to our issues. Leaders networking with experienced and wise persons should lead to more positive, thoughtful, and long-lasting results. This forum should allow interchange of ideas and ways to address chronic, near-term, and upcoming issues. We need to challenge and change the status quo. I bring many years of engineering, program management, and problem solving to the table.</div>
+                    </div>
+                </div>
+
+                <div class="applicant-card">
+                    <div class="applicant-name">5. Nate Saffle</div>
+                    <div class="applicant-email">info@cloudcroft.tech</div>
+                    <div class="applicant-info">
+                        <div class="info-item"><span class="info-label">Address:</span> 130 Trading Post Rd (Cloud Country West, outside village limits)</div>
+                        <div class="info-item"><span class="info-label">Status:</span> Registered voter, property owner</div>
+                        <div class="info-item"><span class="info-label">Availability:</span> Limited (out of town 6/14-6/23 & 7/15-7/22)</div>
+                    </div>
+                    <div class="interest-section">
+                        <div class="section-label">Areas of Interest:</div>
+                        <div class="quote-text">some strong persuasive tactics by Hannah :) and I care about the future of Cloudcroft and want to see it draw a new generation of visitors and residents.</div>
+                    </div>
+                    <div class="participation-section">
+                        <div class="section-label">Why Participating:</div>
+                        <div class="quote-text">After volunteering and working with organizations in Cloudcroft, I see a need for new ideas for the future if Cloudcroft will survive and thrive. I want to hear what other potential leaders want for Cloudcroft and see where I can take part in that vision</div>
+                    </div>
+                </div>
+
+                <div class="applicant-card">
+                    <div class="applicant-name">6. Keith Hamilton</div>
+                    <div class="applicant-email">kbhamilton14@gmail.com</div>
+                    <div class="applicant-info">
+                        <div class="info-item"><span class="info-label">Address:</span> 504 Panther Ave</div>
+                        <div class="info-item"><span class="info-label">Status:</span> Registered voter and property owner, Cloudcroft native</div>
+                        <div class="info-item"><span class="info-label">Current:</span> P&Z Commissioner, Fire Department applicant</div>
+                        <div class="info-item"><span class="info-label">Background:</span> Air Force veteran, business management</div>
+                        <div class="info-item"><span class="info-label">Availability:</span> Generally yes, 2 potential conflicts</div>
+                    </div>
+                    <div class="interest-section">
+                        <div class="section-label">Areas of Interest:</div>
+                        <div class="quote-text">I have been away from, but still very connected to the village for many years, I am interested in learning more about the issues that the village and surrounding areas are facing.</div>
+                    </div>
+                    <div class="participation-section">
+                        <div class="section-label">Why Participating:</div>
+                        <div class="quote-text">I am a Cloudcroft native, born here and spent part of my childhood here. My family has deep ties to this area. Cloudcroft has always been magical to me and I have finally realized my dream of retuning. I have always been active in my community, and I have a great interest in helping the community of Cloudcroft navigate through the difficult times that are always a part of any exceptional place. As an Air Force veteran, and having managed several businesses, I have experience in what it means to be a leader.</div>
+                    </div>
+                </div>
+
+                <div class="applicant-card">
+                    <div class="applicant-name">7. Christina Olvera</div>
+                    <div class="applicant-email">chrmolvera@gmail.com</div>
+                    <div class="applicant-info">
+                        <div class="info-item"><span class="info-label">Address:</span> 7 Primrose Ln, Mayhill</div>
+                        <div class="info-item"><span class="info-label">Status:</span> Registered voter, no property ownership noted</div>
+                        <div class="info-item"><span class="info-label">Background:</span> Sustainability, education substitute, farmers market</div>
+                        <div class="info-item"><span class="info-label">Availability:</span> Full commitment</div>
+                    </div>
+                    <div class="interest-section">
+                        <div class="section-label">Areas of Interest:</div>
+                        <div class="quote-text">I would love the opportunity to become more engaged with the community, offer insight, and shape the future of Clourcroft for the next generation to benefit from. I am especially interested in fire, governance, healthcare, and our schools.</div>
+                    </div>
+                    <div class="participation-section">
+                        <div class="section-label">Why Participating:</div>
+                        <div class="quote-text">"I am eager to participate in Leadership Cloudcroft to gain a deeper understanding of the community and develop effective strategies and outreach initiatives to enhance its quality and the lives of locals. I feel that with my background in sustainability and working within our beautiful forest, substituting with Cloudcroft Municipal Schools, and participating in the farmers market, I offer valuable insight and a perspective that spans multiple roles and groups in the community. I enjoy and work well in a group setting, I am not afraid to take initiative and take the road less traveled. I consider all perspectives and listen to each voice in a group to create a solution that will cause the most beneficial outcome."</div>
+                    </div>
+                </div>
+
+                <div class="applicant-card">
+                    <div class="applicant-name">8. Jorden Scott</div>
+                    <div class="applicant-email">joscott0408@gmail.com</div>
+                    <div class="applicant-info">
+                        <div class="info-item"><span class="info-label">Address:</span> P.O. Box 867 / 1101 Victoria St</div>
+                        <div class="info-item"><span class="info-label">Status:</span> Registered voter and property owner, local native</div>
+                        <div class="info-item"><span class="info-label">Background:</span> Two master's degrees (Business, Archaeology), Forest Service employee</div>
+                        <div class="info-item"><span class="info-label">Availability:</span> Depends on specific days</div>
+                    </div>
+                    <div class="interest-section">
+                        <div class="section-label">Areas of Interest:</div>
+                        <div class="quote-text">I am interested because I grew up here and have yet to become involved due to the constant flux, anger, and stress that seemed to encompass the Village Council. I like the current ideas that have come out recently and feel like maybe this is the right time to put myself out there. I have two masters degrees one in business and one in archaeology. My undergrad is in hotel Resturant and tourism management. I work for the Forest Service and constantly work to show up for volunteer days with the community. I am working to be a leader at work and feel I can learn a lot and offer a lot through this class if given the opportunity.</div>
+                    </div>
+                    <div class="participation-section">
+                        <div class="section-label">Why Participating:</div>
+                        <div class="quote-text">I would like to learn how to become a leader and start to give back to my community I grew up in. I would like to help enact positive change in our small town and think about big picture solutions, approaches, and ideas. I appreciate innovative thinking and believe I can provide a different outlook from my perspective.</div>
+                    </div>
+                </div>
+
+                <div class="applicant-card">
+                    <div class="applicant-name">9. Victor Estrada</div>
+                    <div class="applicant-email">vestrada1822@gmail.com</div>
+                    <div class="applicant-info">
+                        <div class="info-item"><span class="info-label">Address:</span> 3956 Desert Nomad Dr, El Paso, TX (owns 719 Little Bear, Cloudcroft)</div>
+                        <div class="info-item"><span class="info-label">Status:</span> Property owner, not registered voter in Cloudcroft</div>
+                        <div class="info-item"><span class="info-label">Background:</span> Project management, planning, budgeting</div>
+                        <div class="info-item"><span class="info-label">Availability:</span> Full commitment</div>
+                    </div>
+                    <div class="interest-section">
+                        <div class="section-label">Areas of Interest:</div>
+                        <div class="quote-text">Highly skilled in project management, planning, budgeting, regulations and leadership. Interested in Government leadership position.</div>
+                    </div>
+                    <div class="participation-section">
+                        <div class="section-label">Why Participating:</div>
+                        <div class="quote-text">I'll like to take part on the improvement of the village and help to tackle the issues that the village is currently facing and help plan -prepare for the future issues that it may encounter</div>
+                    </div>
+                </div>
+
+                <div class="applicant-card">
+                    <div class="applicant-name">10. Jim Miller</div>
+                    <div class="applicant-email">willtravelphoto@gmail.com</div>
+                    <div class="applicant-info">
+                        <div class="info-item"><span class="info-label">Address:</span> 24 Skyline Dr (also owns Lost Lodge)</div>
+                        <div class="info-item"><span class="info-label">Status:</span> Registered voter and property owner</div>
+                        <div class="info-item"><span class="info-label">Availability:</span> Full commitment</div>
+                    </div>
+                    <div class="interest-section">
+                        <div class="section-label">Areas of Interest:</div>
+                        <div class="quote-text">Fire prevention, Water managment</div>
+                    </div>
+                    <div class="participation-section">
+                        <div class="section-label">Why Participating:</div>
+                        <div class="quote-text">I am interested in being educated and the problems that my community faces and acquiring knowledge that would enable me to help with those problems.</div>
+                    </div>
+                </div>
+
+                <div class="applicant-card">
+                    <div class="applicant-name">11. Ricardo Ruiz</div>
+                    <div class="applicant-email">rich.ruiz2@gmail.com</div>
+                    <div class="applicant-info">
+                        <div class="info-item"><span class="info-label">Address:</span> 12 Mogollon Trail, High Rolls</div>
+                        <div class="info-item"><span class="info-label">Status:</span> Property owner in High Rolls, not registered voter in Cloudcroft</div>
+                        <div class="info-item"><span class="info-label">Background:</span> Healthcare, water/wastewater laboratory, QA auditing</div>
+                        <div class="info-item"><span class="info-label">Availability:</span> Schedule dependent</div>
+                    </div>
+                    <div class="interest-section">
+                        <div class="section-label">Areas of Interest:</div>
+                        <div class="quote-text">Living in an unincorporated township near Cloudcroft I have special interest in what happens in Cloudcroft and would like to use this opportunity to see how I may positively affect the Village through volunteering and potentially in business. I have a background in healthcare, water/wastewater laboratory, QA auditing, and safeguards. At this time I don't have a specific area of interest.</div>
+                    </div>
+                    <div class="participation-section">
+                        <div class="section-label">Why Participating:</div>
+                        <div class="quote-text">Living in an unincorporated township near Cloudcroft I have special interest in what happens in Cloudcroft and would like to use this opportunity to see how I may positively affect the Village through volunteering and potentially in business. I have a background in healthcare, water/wastewater laboratory, QA auditing, and safeguards. At this time I don't have a specific area of interest.</div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="applicant-card">
+                    <div class="applicant-name">12. Andrika Ruiz</div>
+                    <div class="applicant-email">shalomruiz@gmail.com</div>
+                    <div class="applicant-info">
+                        <div class="info-item"><span class="info-label">Address:</span> 12 Mogollon Trl, High Rolls, NM 88325</div>
+                        <div class="info-item"><span class="info-label">Status:</span> Property owner in High Rolls, not registered voter in Cloudcroft</div>
+                        <div class="info-item"><span class="info-label">Phone:</span> 575-318-4705</div>
+                        <div class="info-item"><span class="info-label">Background:</span> Chair of Cloudcroft Library Board, substitute teacher, local business owner, church elder</div>
+                        <div class="info-item"><span class="info-label">Availability:</span> Full commitment</div>
+                    </div>
+                    <div class="interest-section">
+                        <div class="section-label">Areas of Interest:</div>
+                        <div class="quote-text">I want to grow in my ability to serve our community effectively. I'm interested in learning ways to increase community involvement.</div>
+                    </div>
+                    <div class="participation-section">
+                        <div class="section-label">Why Participating:</div>
+                        <div class="quote-text">I'd like to participate in this year's Leadership Cloudcroft program because I'm deeply invested in this community. As a resident of High Rolls, what happens in Cloudcroft directly affects my family and me. I currently serve as Chair of the Cloudcroft Library Board, substitute teach at the middle and high school, am a local small business owner, and my spouse and I are church elders of Treehouse Fellowship here in Cloudcroft. I see firsthand how vital strong leadership is to the success of our community. I want to grow in my ability to serve effectively, avoid burnout, and help others do the same. This program is an opportunity to build the skills and relationships needed to strengthen not just Cloudcroft, but the mountain, for the future.</div>
+                    </div>
+            </div>
+
+            <div class="potential-participants">
+                <h3 style="color: #2c3e50; margin-bottom: 15px;">Potential Additional Participants (3)</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;">• Bri Jonnes</li>
+                    <li style="margin-bottom: 5px;">• Nathan Tompkins</li>
+                    <li style="margin-bottom: 5px;">• Nick Hanna</li>
+                </ul>
+                <p style="font-style: italic; color: #6c757d; margin-top: 10px;">(No contact information or details provided)</p>
+            </div>
+        </div>
+
+        <div class="themes-section">
+            <h2 class="section-title">Key Themes and Common Concerns</h2>
+            <ul class="themes-list">
+                <li><strong>Fire Safety & Prevention:</strong> Multiple applicants expressed urgent concerns about fire prevention and community resilience</li>
+                <li><strong>Water Management & Conservation:</strong> Recurring priority for sustainable village growth</li>
+                <li><strong>Village Government Operations:</strong> Strong desire to understand processes and reduce turnover</li>
+                <li><strong>Community Library:</strong> Specific interest in reopening library for youth programming</li>
+                <li><strong>Strategic Growth Planning:</strong> Balance between development and resource conservation</li>
+                <li><strong>Leadership Development:</strong> Many seeking to transition from volunteering to formal leadership roles</li>
+            </ul>
+        </div>
+
+        <div class="recommendations-section">
+            <h2 class="section-title">Recommendations</h2>
+            <ul class="recommendations-list">
+                <li>Follow up with the 3 incomplete applications (Jonnes, Tompkins, Hanna)</li>
+                <li>Coordinate scheduling around known conflicts (Saffle's travel dates, Hamilton's trips, Scott's day-specific availability)</li>
+                <li>Develop curriculum addressing fire safety, water management, and government operations as priority topics</li>
+                <li>Consider library reopening project as potential class initiative</li>
+                <li>Leverage diverse professional backgrounds for peer-to-peer learning opportunities</li>
+                <li>Address village council dynamics and leadership retention challenges</li>
+            </ul>
+        </div>
+
+        <div class="footer-note">
+            This memo summarizes applications received for the Leadership Cloudcroft 2025 program.
+        </div>
+    </div>
+</body>
+</html>
+

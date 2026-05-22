@@ -4,7 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leadership Cloudcroft</title>
+    <title>Leadership Cloudcroft — Year Two</title>
+    <meta name="description"
+        content="Leadership Cloudcroft cultivates informed, connected, and action-oriented leaders committed to the Village of Cloudcroft. Year Two coming soon.">
+    <link rel="icon" type="image/png" href="icon-leadership-circle-white.png">
+    <meta property="og:title" content="Leadership Cloudcroft — Year Two">
+    <meta property="og:description"
+        content="Leadership Cloudcroft cultivates informed, connected, and action-oriented leaders committed to the Village of Cloudcroft. Year Two coming soon.">
+    <meta property="og:image" content="https://leadershipcloudcroft.com/icon-leadership-circle-white.png">
+    <meta property="og:url" content="https://leadershipcloudcroft.com/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -18,7 +28,7 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background-color: #6F7555;
+            background-color: #5C6147;
             font-family: 'Newsreader', serif;
             text-align: center;
             color: #f1f6f0;
@@ -30,7 +40,7 @@
             margin-bottom: 4vh;
         }
 
-        .coming-soon {
+        h1 {
             font-size: 2.5rem;
             font-weight: 300;
             letter-spacing: 0.15em;
@@ -39,11 +49,21 @@
             color: #FFDD57;
         }
 
-        .subtitle {
-            font-size: 1.4rem;
-            margin-top: 1.5rem;
-            font-weight: 400;
+        .cta {
+            display: inline-block;
+            margin-top: 2.5rem;
+            font-size: 1.05rem;
+            letter-spacing: 0.04em;
             color: #f1f6f0;
+            text-decoration: underline;
+            text-underline-offset: 6px;
+            text-decoration-thickness: 1px;
+            transition: color 0.2s ease;
+        }
+
+        .cta:hover,
+        .cta:focus {
+            color: #FFDD57;
         }
 
         footer {
@@ -51,7 +71,6 @@
             bottom: 2vh;
             font-size: 0.8rem;
             color: #f1f6f0;
-            opacity: 0.6;
         }
 
         @media only screen and (max-width: 768px) {
@@ -59,13 +78,8 @@
                 width: 80%;
             }
 
-            .coming-soon {
+            h1 {
                 font-size: 1.8rem;
-            }
-
-            .subtitle {
-                font-size: 1.1rem;
-                padding: 0 1rem;
             }
         }
     </style>
@@ -73,7 +87,8 @@
 
 <body>
     <img class="logo" src="icon-leadership-circle-white.png" alt="Leadership Cloudcroft" />
-    <p class="coming-soon">Year Two</p>
+    <h1>Year Two</h1>
+    <a class="cta" href="mailto:info@leadershipcloudcroft.com?subject=Notify%20me%20about%20Year%20Two">Notify me when applications open</a>
     <footer>&copy; Leadership Cloudcroft 2026</footer>
 </body>
 
